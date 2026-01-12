@@ -8,18 +8,25 @@ st.set_page_config(
     layout="centered"
 )
 
-# CSS personalizado
+# CSS personalizado - Fondo claro con mejor contraste
 st.markdown("""
 <style>
     .stApp {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
     }
     .main .block-container {
         background: white;
         border-radius: 16px;
         padding: 2rem;
         margin-top: 1rem;
-        box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    section[data-testid="stSidebar"] {
+        background: white;
+        border-right: 1px solid #e0e0e0;
+    }
+    section[data-testid="stSidebar"] .block-container {
+        padding-top: 2rem;
     }
     .stat-box {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -49,6 +56,9 @@ st.markdown("""
         padding: 4px 12px;
         border-radius: 20px;
         font-weight: 600;
+    }
+    h1 {
+        color: #333 !important;
     }
 </style>
 """, unsafe_allow_html=True)
