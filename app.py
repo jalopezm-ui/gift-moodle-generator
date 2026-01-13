@@ -130,8 +130,9 @@ def generate_gift(df, wrong_score, category):
                 distractores.append(str(val))
         
         # Construir pregunta GIFT
+        # Formato correcto: = para correcta (100% implícito), ~%peso% para incorrectas
         gift += f'::{escape_gift(q_id)}::{escape_gift(enunciado)} {{\n'
-        gift += f'  =%100%{escape_gift(correcta)}\n'
+        gift += f'  ={escape_gift(correcta)}\n'
         
         for d in distractores:
             gift += f'  ~%{wrong_score}%{escape_gift(d)}\n'
